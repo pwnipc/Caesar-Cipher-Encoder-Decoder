@@ -18,11 +18,23 @@ public class CaesarShift {
             encryptedChars.add(ALPHABET.charAt(encryptedCharIndex));//get the character from the alphabet rank and add it to the char array
             encryptedMsg = encryptedChars.toString().replaceAll("\\[|\\]|\\s","").replaceAll(",","");//convert and cleanup the char array to a string
         }
-      return encryptedMsg;
+        return encryptedMsg;
     }
 
-    public String decrypt(String decryptMsg){
-        return decryptMsg.toUpperCase();
+    public String decrypt(String decryptMsg) {
+        String upCased = decryptMsg.toUpperCase();
+        char[] upCasedArrs = upCased.toCharArray();//split the string to a character array
+        ArrayList<Character> decryptedChars = new ArrayList<Character>();
+
+        //loop through the character array
+        for (Character character : upCasedArrs) {
+            int index = ALPHABET.indexOf(character.toString());//get the character rank in the alphabet
+            int decryptedCharIndex = Math.floorMod((index - key), 26);//shift the character using the key and get the new characters rank in the alphabet
+            decryptedChars.add(ALPHABET.charAt(decryptedCharIndex));//get the character from the alphabet rank and add it to the char array
+            decryptedMsg = decryptedChars.toString().replaceAll("\\[|\\]|\\s", "").replaceAll(",", "");//convert and cleanup the char array to a string
+        }
+        return decryptedMsg;
+
     }
 
 }
