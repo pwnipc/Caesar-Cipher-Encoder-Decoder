@@ -40,9 +40,19 @@ public class App {
 
             }else if(option == 2){
                 System.out.println("Enter the message to Decrypt : ");
+                String message = myConsole.readLine(BLUE+"encryptedMessage"+GREEN+"@caesar:"+BLUE+"~$ "+NEUTRAL);
+                System.out.println("\nEnter the shift key '1 - 25' :");
+                int key = Integer.parseInt(myConsole.readLine(BLUE+"key"+GREEN+"@caesar:"+BLUE+"~$ "+NEUTRAL));
+                myCaesar.setKey(key);
+                myCaesar.decrypt(message);
+                System.out.println(RED+"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+NEUTRAL);
+                System.out.println(BLUE+"Input String: "+GREEN+message);
+                System.out.println(BLUE+"Decrypted String: "+GREEN+myCaesar.getDecryptedMsg());
+                System.out.println(BLUE+"Shift/Decryption key : "+GREEN+myCaesar.getKey()+NEUTRAL);
+                System.out.println(RED+"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+NEUTRAL);
 
             }else if(option == 3){
-                System.out.println("Goodbye :)");
+                System.out.println(RED+"Goodbye :)");
                 running = false ;
             }else {
                 System.out.println(RED+"Oops!, invalid Option :("+NEUTRAL);
