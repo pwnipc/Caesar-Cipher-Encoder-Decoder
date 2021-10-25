@@ -4,20 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CaesarShiftTest {
     @Test
-    public void caesarShift_convertCase_String() {
-        CaesarShift testCase = new CaesarShift();
-        assertEquals("Z", testCase.encrypt("a"));
+    public void caesarShift_isEncryptUpcasedTest_Boolean() {
+        CaesarShift encryptCaseCheck = new CaesarShift();
+        assertEquals(true, Character.isUpperCase(encryptCaseCheck.encrypt("a").charAt(0)));
     }
 
     @Test
-    public void caesarShift_encryptSingleChar_String(){
-        CaesarShift encryptChar = new CaesarShift();
-        assertEquals("Y", encryptChar.encrypt("Z"));
-    }
-
-    @Test
-    void caesarShift_encryptString_String() {
+    void caesarShift_encryptStringTest_String() {
         CaesarShift encryptString = new CaesarShift();
         assertEquals("GDKKN", encryptString.encrypt("hello"));
     }
+
+    @Test
+    public void caesarShift_isDecryptMsgUpcasedTest_String() {
+        CaesarShift caseTest = new CaesarShift();
+        assertEquals(true, Character.isUpperCase(caseTest.decrypt("a").charAt(0)));
+    }
+
+
 }
