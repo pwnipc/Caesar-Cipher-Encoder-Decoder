@@ -21,5 +21,11 @@ class CaesarShiftTest {
         assertEquals(true, Character.isUpperCase(caseTest.decrypt("a").charAt(0)));
     }
 
+    @Test
+    public void caesarShift_decryptStringTest_String(){
+        CaesarShift decryptStringTest = new CaesarShift();
+        assertEquals("Z", decryptStringTest.decrypt("Y"));
+    }
+
 
 }
