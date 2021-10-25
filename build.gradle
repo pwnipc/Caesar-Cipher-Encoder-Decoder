@@ -2,6 +2,14 @@ plugins {
     id 'java'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'App'
+        )
+    }
+}
+
 group 'com.chalie.caesar'
 version '1.0-SNAPSHOT'
 
