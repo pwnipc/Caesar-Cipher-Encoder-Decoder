@@ -5,8 +5,8 @@ public class CaesarShift {
     private static int key = 25; //Initialize and encapsulate the shift key
     private static String encryptedMsg; //Create and encapsulate the message container
 
-    public String encrypt(String msg){
-        String upCased = msg.toUpperCase();
+    public String encrypt(String encryptMsg){
+        String upCased = encryptMsg.toUpperCase();
         char[] upCasedArrs = upCased.toCharArray();//split the string to a character array
         ArrayList<Character> encryptedChars = new ArrayList<Character>();
 
@@ -18,6 +18,10 @@ public class CaesarShift {
             encryptedMsg = encryptedChars.toString().replaceAll("\\[|\\]|\\s","").replaceAll(",","");//convert and cleanup the char array to a string
         }
       return encryptedMsg;
+    }
+
+    public String decrypt(String decryptMsg){
+        return decryptMsg.toUpperCase();
     }
 
 }
