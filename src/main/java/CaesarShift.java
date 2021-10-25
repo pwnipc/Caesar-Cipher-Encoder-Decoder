@@ -13,7 +13,7 @@ public class CaesarShift {
         //loop through the character array
         for(Character character : upCasedArrs ){
             int index = ALPHABET.indexOf(character.toString());//get the character rank in the alphabet
-            int encryptedCharIndex = (index+key)%26;//shift the character using the key and get the new characters rank in the alphabet
+            int encryptedCharIndex = Math.floorMod((index+key),26);//shift the character using the key and get the new characters rank in the alphabet
             encryptedChars.add(ALPHABET.charAt(encryptedCharIndex));//get the character from the alphabet rank and add it to the char array
             encryptedMsg = encryptedChars.toString().replaceAll("\\[|\\]|\\s","").replaceAll(",","");//convert and cleanup the char array to a string
         }
