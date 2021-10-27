@@ -12,6 +12,25 @@ Run the package using `java -jar Caesar-Cipher-Encoder-Decoder<version>.jar`
 ![image](https://user-images.githubusercontent.com/60155767/138775171-45c94d1f-16e5-4097-95f3-847e90bff297.png)
 
 
+## Behaviour Driven Development
+
+- Displays banner and welcome message
+  - INPUT: "prompt for option selection"
+
+- Displays: "Prompt message input if encrypt Message option Entered"
+  - INPUT: "Enter the message to Encrypt prompt"
+  - INPUT: "Enter the shift/encryption key  prompt"
+  - OUTPUT: "Displays User's input message, the encrypted message and the encryption/shift key"
+
+- Displays: "Prompt message input if decrypt Message option Entered"
+  - INPUT: "Enter the message to decrypt prompt"
+  - INPUT: "Enter the shift/decryption key  prompt"
+  - OUTPUT: "Displays User's input message, the decrypted message and the decryption/shift key"
+
+- Displays: "Show goodbye and exit on exit option Entered"
+
+- Displays an Error Message if option selection is not a number or out of range"
+
 
 
 ## Contributions
